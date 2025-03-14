@@ -1,3 +1,4 @@
+<!-- breathr.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,14 @@
     <title>Relaxing Audio Player & Breathing Exercise</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B85EJZZEFS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-B85EJZZEFS');
+    </script>
 </head>
 <body>
     <header>
@@ -16,12 +25,15 @@
     <h1>Guided Breathing</h1>
     <table class="breathing-table">
         <tr>
+            <td><strong>Breathing Text</strong></td>
             <td><div id="breathing-text">Breathe In</div></td>
         </tr>
         <tr>
+            <td><strong>Start/Stop Button</strong></td>
             <td><button id="start-stop">Stop</button></td>
         </tr>
         <tr>
+            <td><strong>Breathing Pattern</strong></td>
             <td>
                 <select id="breathing-pattern">
                     <option value="4-6-8">4-6-8 Breathing</option>
