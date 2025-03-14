@@ -7,26 +7,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+    <header>
+        <a href="index.html">Relaxing Sound Mixer</a>
+        <a href="breathr.html">Guided Breathing</a>
+    </header>
 
+    <h1>Guided Breathing</h1>
+    <table class="breathing-table">
+        <tr>
+            <td><div id="breathing-text">Breathe In</div></td>
+        </tr>
+        <tr>
+            <td><button id="start-stop">Stop</button></td>
+        </tr>
+        <tr>
+            <td>
+                <select id="breathing-pattern">
+                    <option value="4-6-8">4-6-8 Breathing</option>
+                    <option value="4-4-4-4">Box Breathing (4-4-4-4)</option>
+                    <option value="4-7-8">4-7-8 Breathing</option>
+                </select>
+            </td>
+        </tr>
+    </table>
 
-<header>
-    <a href="index.html">Relaxing Sound Mixer</a>
-    <a href="breathr.html">Guided Breathing</a>
-</header>
+    <footer>
+        <p>&copy; 2025 Relaxing Music By Lexi. All rights reserved.</p>
+    </footer>
 
-<h1>Guided Breathing</h1>
-<div id="breathing-text">Breathe In</div>
-<br>
-<button id="start-stop">Stop</button>
-<select id="breathing-pattern">
-    <option value="4-6-8">4-6-8 Breathing</option>
-    <option value="4-4-4-4">Box Breathing (4-4-4-4)</option>
-    <option value="4-7-8">4-7-8 Breathing</option>
-</select>
-<footer>
-    <!-- <a href="https://buy.stripe.com/test_4gw4jQd2g0gG1gk4gh" class="btn">Donations Tip Jar</a> -->
-    <p>&copy; 2025 Relaxing Music By Lexi. All rights reserved.</p>
-</footer>
-
-<script src="breathing.js"></script>
+    <script src="breathing.js"></script>
+</body>
 </html>
