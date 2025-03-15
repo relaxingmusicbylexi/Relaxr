@@ -30,3 +30,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+function bookmarkPage() {
+    const title = document.title;
+    const url = window.location.href;
+
+    if (window.sidebar && window.sidebar.addPanel) {
+        // Firefox <=22
+        window.sidebar.addPanel(title, url, "");
+    } else if (window.external && ('AddFavorite' in window.external)) {
+        // IE
+        window.external.AddFavorite(url, title);
+    } else if (window.opera && window.print) {
+        // Opera
+        var elem = document.createElement('a');
+        elem.setAttribute('href', url);
+        elem.setAttribute('title', title);
+        elem.setAttribute('rel', 'sidebar');
+        elem.click();
+    } else {
+        alert('Press Ctrl+D (Cmd+D for Mac) to bookmark this page.');
+    }
+}

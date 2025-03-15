@@ -68,6 +68,11 @@ h1 {
     transition: color 4s ease-in-out;
     transform: scale(1.5);
 }
+.bookmark-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: #007bff;
+}
 
 .hold {
     color: white;
