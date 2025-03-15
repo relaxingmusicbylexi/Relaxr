@@ -5,13 +5,21 @@ body {
     margin-top: 50px;
     background-color: #f0f8ff;
     color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: royalblue;
     padding: 10px 0;
     color: white;
     font-size: 1.2em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
 }
 
     header a {
@@ -25,272 +33,24 @@ h1 {
     margin-bottom: 20px;
 }
 
-#breathing-text {
-    margin-top: 20px;
-    font-size: 1.5em;
-    font-weight: bold; /* Added this line to make the text bold */
-    transition: color 4s ease-in-out;
-    color: white;
-}
-
-#play-pause, #start-stop {
+#play-pause {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
+    text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-    #play-pause:hover, #start-stop:hover {
+    #play-pause:hover {
         background-color: #45a049;
         transform: scale(1.05);
     }
 
 #volume {
-    width: 150px;
-}
-
-.breathe-in {
-    color: white;
-    background-color: mediumblue;
-    margin-top: 20px;
-    font-size: 1.5em;
-    font-weight: bold; /* Added this line to make the text bold */
-    transition: color 4s ease-in-out;
-    transform: scale(1.5);
-}
-
-.hold {
-    color: white;
-    background-color: darkblue;
-    margin-top: 20px;
-    font-size: 1.5em;
-    font-weight: bold; /* Added this line to make the text bold */
-    transition: color 4s ease-in-out;
-}
-
-.breathe-out {
-    color: white;
-    margin-top: 20px;
-    font-size: 1.5em;
-    font-weight: bold; /* Added this line to make the text bold */
-    transition: color 4s ease-in-out;
-    background-color: seagreen;
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    #play-pause, #start-stop {
-        padding: 8px 16px;
-        font-size: 0.9em;
-    }
-
-    #volume {
-        width: 120px;
-    }
-
-    select#breathing-pattern {
-        padding: 8px;
-        font-size: 0.9em;
-    }
-}
-
-select#breathing-pattern {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #4CAF50;
-    background-color: #f0f8ff;
-    color: #333;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-    select#breathing-pattern:hover {
-        background-color: #e0f7fa;
-        border-color: #45a049;
-    }
-/* styles.css */
-body {
-    font-family: 'Quicksand', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header {
     width: 100%;
-    display: flex;
-    padding: 1rem;
-    background-color: #007BFF;
-}
-
-.container {
-    max-width: 800px;
-    width: 100%;
-    padding: 1rem;
-}
-
-table {
-    margin: 0 auto;
-    border-collapse: collapse;
-}
-
-td {
-    padding: 1rem;
-}
-
-.audio-track {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.audio-controls {
-    display: flex;
-    align-items: center;
-    margin-top: 0.5rem;
-}
-
-button {
-    margin-right: 0.5rem;
-}
-
-footer {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-/* styles.css */
-body {
-    font-family: 'Quicksand', sans-serif;
-    text-align: center;
-    margin-top: 50px;
-    background-color: #f0f8ff;
-    color: #333;
-}
-
-header {
-    background-color: #4CAF50;
-    padding: 10px 0;
-    color: white;
-    font-size: 1.2em;
-}
-
-    header a {
-        color: white;
-        text-decoration: none;
-        margin: 0 15px;
-    }
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-#breathing-text {
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: white;
-    font-weight: bold; /* Added this line to make the text bold */
-    transition: color 4s ease-in-out;
-}
-
-#play-pause, #start-stop {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-    #play-pause:hover, #start-stop:hover {
-        background-color: #45a049;
-        transform: scale(1.05);
-    }
-
-#volume {
-    width: 150px;
-}
-
-.breathe-in {
-    color: white;
-    background-color: mediumblue;
-    transform: scale(1.5);
-}
-
-.hold {
-    color: white;
-    background-color: darkblue;
-}
-
-.breathe-out {
-    color: white;
-    background-color: seagreen;
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    #play-pause, #start-stop {
-        padding: 8px 16px;
-        font-size: 0.9em;
-    }
-
-    #volume {
-        width: 120px;
-    }
-
-    select#breathing-pattern {
-        padding: 8px;
-        font-size: 0.9em;
-    }
-}
-
-select#breathing-pattern {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #4CAF50;
-    background-color: #f0f8ff;
-    color: #333;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-    select#breathing-pattern:hover {
-        background-color: #e0f7fa;
-        border-color: #45a049;
-    }
-
-body {
-    font-family: 'Quicksand', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header {
-    width: 100%;
-    display: flex;
-    padding: 1rem;
-    background-color: #007BFF;
 }
 
 .container {
@@ -329,10 +89,18 @@ tr:hover {
     display: flex;
     align-items: center;
     margin-top: 0.5rem;
+    width: 100%;sddw
 }
 
 button {
-    margin-right: 0.5rem;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 footer {
@@ -361,28 +129,9 @@ footer {
             transform: scale(1.05);
         }
 
-.breathing-table {
-    margin: 20px auto;
-    border-collapse: collapse;
-    width: 80%;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-    .breathing-table td {
-        padding: 1rem;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .breathing-table tr:hover {
-        background-color: #f1f1f1;
-    }
-
 .audio-image {
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    height: 150px;
     margin-right: 10px;
     vertical-align: middle;
 }
