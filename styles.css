@@ -386,3 +386,8 @@ footer {
     margin-right: 10px;
     vertical-align: middle;
 }
+
+.audio-title {
+    display: flex;
+    align-items: center;
+}
