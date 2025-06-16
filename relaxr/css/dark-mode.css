@@ -1,0 +1,233 @@
+:root {
+    --primary-bg: #ffffff;
+    --secondary-bg: #f8f9fa;
+    --text-color: #333333;
+    --accent-color: #007bff;
+    --border-color: #dee2e6;
+}
+
+[data-theme="dark"] {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #2d2d2d;
+    --text-color: #ffffff;
+    --accent-color: #007bff;
+    --border-color: #4d4d4d;
+}
+
+/* Dark mode styles for all components */
+[data-theme="dark"] body {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] header a {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] header a:hover {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .search-container {
+    background-color: var(--secondary-bg);
+}
+
+[data-theme="dark"] .search-input,
+[data-theme="dark"] .search-filter {
+    background-color: var(--primary-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .search-input:focus,
+[data-theme="dark"] .search-filter:focus {
+    border-color: var(--accent-color);
+}
+
+[data-theme="dark"] mark {
+    background-color: #444400;
+    color: var(--text-color);
+}
+
+/* Dark mode styles for sleep timer */
+[data-theme="dark"] .sleep-timer-container {
+    background-color: var(--secondary-bg);
+}
+
+[data-theme="dark"] .timer-controls {
+    background-color: var(--primary-bg);
+}
+
+[data-theme="dark"] .timer-btn {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .timer-display {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .progress-bar {
+    background-color: var(--border-color);
+}
+
+[data-theme="dark"] .progress {
+    background-color: var(--accent-color);
+}
+
+/* Dark mode styles for mood tracking */
+[data-theme="dark"] .mood-tracking-container {
+    background-color: var(--secondary-bg);
+}
+
+[data-theme="dark"] .mood-input,
+[data-theme="dark"] .mood-history {
+    background-color: var(--primary-bg);
+}
+
+[data-theme="dark"] .mood-scale {
+    gap: 1.5rem;
+}
+
+[data-theme="dark"] .mood-item {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .mood-item:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .mood-item.selected {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .mood-notes textarea {
+    background-color: var(--primary-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .history-chart {
+    background-color: var(--primary-bg);
+}
+
+[data-theme="dark"] .history-item {
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .history-item .mood-icon {
+    color: var(--text-color);
+}
+
+/* Dark mode styles for relaxr page */
+[data-theme="dark"] .audio-track {
+    background-color: var(--primary-bg);
+}
+
+[data-theme="dark"] .audio-track h1 {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .audio-track audio {
+    background-color: var(--secondary-bg);
+}
+
+[data-theme="dark"] .volume {
+    background-color: var(--primary-bg);
+}
+
+[data-theme="dark"] .social-sharing a {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] footer {
+    color: var(--text-color);
+}
+
+/* Dark mode styles for breathing page */
+[data-theme="dark"] .breathing-table {
+    background-color: var(--primary-bg);
+}
+
+[data-theme="dark"] .breathing-table td {
+    background-color: var(--secondary-bg);
+}
+
+[data-theme="dark"] .breathing-text {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .social-sharing {
+    background-color: var(--primary-bg);
+}
+
+/* Dark mode styles for articles page */
+[data-theme="dark"] .articles-container {
+    background-color: var(--secondary-bg);
+}
+
+[data-theme="dark"] .article-card {
+    background-color: var(--primary-bg);
+}
+
+[data-theme="dark"] .article-card h2,
+[data-theme="dark"] .article-card p {
+    color: var(--text-color);
+}
+
+/* Dark mode toggle button styles */
+.theme-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary-bg);
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle {
+    padding: 8px;
+    background-color: var(--primary-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--secondary-bg);
+}
+
+.theme-text {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--secondary-bg);
+}
+
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+[data-theme="dark"] .theme-toggle {
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .theme-toggle svg {
+    fill: var(--text-color);
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracking - Relaxing Sound Mixer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/mood-tracking.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B85EJZZEFS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-B85EJZZEFS');
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"> Relaxing Music By Lexi</a>
+        <a href="relaxr.html">Relaxing Sound Mixer</a>
+        <a href="breathr.html">Guided Breathing</a>
+        <a href="mood-tracking.html" class="active">Mood Tracking</a>
+    </header>
+
+    <main class="mood-tracking-container">
+        <h1>Mood Tracking</h1>
+        
+        <div class="mood-input">
+            <h2>How are you feeling?</h2>
+            <div class="mood-scale">
+                <div class="mood-item" data-mood="1">
+                    <span class="mood-icon">😢</span>
+                    <span class="mood-label">Very Sad</span>
+                </div>
+                <div class="mood-item" data-mood="2">
+                    <span class="mood-icon">😔</span>
+                    <span class="mood-label">Sad</span>
+                </div>
+                <div class="mood-item" data-mood="3">
+                    <span class="mood-icon">😐</span>
+                    <span class="mood-label">Neutral</span>
+                </div>
+                <div class="mood-item" data-mood="4">
+                    <span class="mood-icon">😊</span>
+                    <span class="mood-label">Happy</span>
+                </div>
+                <div class="mood-item" data-mood="5">
+                    <span class="mood-icon">😍</span>
+                    <span class="mood-label">Very Happy</span>
+                </div>
+            </div>
+
+            <div class="mood-notes">
+                <label for="mood-notes">Additional notes:</label>
+                <textarea id="mood-notes" placeholder="Write about what's affecting your mood..."></textarea>
+            </div>
+
+            <div class="mood-actions">
+                <button id="save-mood">Save Mood</button>
+                <button id="view-history">View History</button>
+            </div>
+        </div>
+
+        <div class="mood-history" id="mood-history">
+            <h2>Mood History</h2>
+            <div class="history-chart" id="history-chart"></div>
+            <div class="history-list" id="history-list"></div>
+        </div>
+    </main>
+
+    <script src="js/mood-tracking.js"></script>
+    <script src="js/dark-mode.js"></script>
+</body>
+</html>
