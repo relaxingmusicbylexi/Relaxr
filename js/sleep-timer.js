@@ -3,6 +3,7 @@ class SleepTimer {
         this.isRunning = false;
         this.timer = null;
         this.totalSeconds = 0;
+        this.remainingSeconds = 0;
         this.progressInterval = null;
         
         this.initializeElements();
@@ -52,6 +53,7 @@ class SleepTimer {
 
         // Calculate total seconds
         this.totalSeconds = hours * 3600 + minutes * 60 + seconds;
+        this.remainingSeconds = this.totalSeconds;
 
         // Validate total time
         if (isNaN(this.totalSeconds) || this.totalSeconds <= 0) {
@@ -77,30 +79,28 @@ class SleepTimer {
 
         // Start progress bar update
         this.progressInterval = setInterval(() => {
-            const progress = ((this.totalSeconds - (this.totalSeconds - (hours * 3600 +
-                minutes * 60 +
-                seconds))) / (hours * 3600 +
-                minutes * 60 +
-                seconds)) * 100;
-            this.progressBar.style.width = `${progress}%`;
+            if (this.isRunning) {
+                const progress = ((this.totalSeconds - this.remainingSeconds) / this.totalSeconds) * 100;
+                this.progressBar.style.width = `${progress}%`;
+            }
         }, 1000);
     }
 
     countdown() {
-        if (this.totalSeconds <= 0) {
+        if (this.remainingSeconds <= 0) {
             this.stopTimer();
             this.handleTimerEnd();
             return;
         }
 
-        this.totalSeconds--;
+        this.remainingSeconds--;
         
-        const hours = Math.floor(this.totalSeconds / 3600);
-        const minutes = Math.floor((this.totalSeconds % 3600) / 60);
-        const seconds = this.totalSeconds % 60;
+        const hours = Math.floor(this.remainingSeconds / 3600);
+        const minutes = Math.floor((this.remainingSeconds % 3600) / 60);
+        const seconds = this.remainingSeconds % 60;
 
         this.timerText.textContent = 
-            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')};`;
     }
 
     stopTimer() {
@@ -178,8 +178,35 @@ class SleepTimer {
     }
 
     playAlarm() {
-        const alarm = new Audio('alarm.mp3'); // You'll need to add an alarm sound file
-        alarm.play();
+        // Create three beeps with a short pause between each
+        const context = new AudioContext();
+        const beepDuration = 0.2; // 200ms for each beep
+        const pauseDuration = 0.3; // 300ms pause between beeps
+        const frequency = 880; // A5 note
+        
+        // First beep
+        const oscillator1 = context.createOscillator();
+        oscillator1.type = 'sine';
+        oscillator1.frequency.setValueAtTime(frequency, context.currentTime);
+        oscillator1.connect(context.destination);
+        oscillator1.start();
+        oscillator1.stop(context.currentTime + beepDuration);
+        
+        // Second beep
+        const oscillator2 = context.createOscillator();
+        oscillator2.type = 'sine';
+        oscillator2.frequency.setValueAtTime(frequency, context.currentTime + beepDuration + pauseDuration);
+        oscillator2.connect(context.destination);
+        oscillator2.start(context.currentTime + beepDuration + pauseDuration);
+        oscillator2.stop(context.currentTime + beepDuration * 2 + pauseDuration);
+        
+        // Third beep
+        const oscillator3 = context.createOscillator();
+        oscillator3.type = 'sine';
+        oscillator3.frequency.setValueAtTime(frequency, context.currentTime + beepDuration * 2 + pauseDuration * 2);
+        oscillator3.connect(context.destination);
+        oscillator3.start(context.currentTime + beepDuration * 2 + pauseDuration * 2);
+        oscillator3.stop(context.currentTime + beepDuration * 3 + pauseDuration * 2);
     }
 }
 
