@@ -4,7 +4,6 @@ class SleepTimer {
         this.timer = null;
         this.totalSeconds = 0;
         this.progressInterval = null;
-        this.audioManager = null;
         
         this.initializeElements();
         this.setupEventListeners();
@@ -15,19 +14,12 @@ class SleepTimer {
         this.minutesInput = document.getElementById('minutes');
         this.secondsInput = document.getElementById('seconds');
         
-        this.displayHours = document.getElementById('display-hours');
-        this.displayMinutes = document.getElementById('display-minutes');
-        this.displaySeconds = document.getElementById('display-seconds');
-        
+        this.timerText = document.getElementById('timer-text');
         this.progressBar = document.getElementById('progress');
         
         this.startBtn = document.getElementById('start-timer');
         this.stopBtn = document.getElementById('stop-timer');
         this.resetBtn = document.getElementById('reset-timer');
-        
-        this.fadeOutCheckbox = document.getElementById('fade-out');
-        this.alarmCheckbox = document.getElementById('alarm');
-        this.autoStopCheckbox = document.getElementById('auto-stop');
     }
 
     setupEventListeners() {
@@ -46,21 +38,29 @@ class SleepTimer {
         const minutes = parseInt(this.minutesInput.value) || 0;
         const seconds = parseInt(this.secondsInput.value) || 0;
         
-        this.displayHours.textContent = hours.toString().padStart(2, '0');
-        this.displayMinutes.textContent = minutes.toString().padStart(2, '0');
-        this.displaySeconds.textContent = seconds.toString().padStart(2, '0');
+        this.timerText.textContent = 
+            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
 
     startTimer() {
         if (this.isRunning) return;
 
-        // Get total seconds
-        this.totalSeconds = 
-            parseInt(this.hoursInput.value) * 3600 +
-            parseInt(this.minutesInput.value) * 60 +
-            parseInt(this.secondsInput.value);
+        // Get values and validate
+        const hours = parseInt(this.hoursInput.value) || 0;
+        const minutes = parseInt(this.minutesInput.value) || 0;
+        const seconds = parseInt(this.secondsInput.value) || 0;
 
-        if (this.totalSeconds <= 0) return;
+        // Calculate total seconds
+        this.totalSeconds = hours * 3600 + minutes * 60 + seconds;
+
+        // Validate total time
+        if (isNaN(this.totalSeconds) || this.totalSeconds <= 0) {
+            alert('Please enter a valid time greater than 0');
+            return;
+        }
+
+        // Set initial progress bar width
+        this.progressBar.style.width = '100%';
 
         this.isRunning = true;
         this.startBtn.disabled = true;
@@ -75,8 +75,15 @@ class SleepTimer {
         // Start countdown
         this.timer = setInterval(() => this.countdown(), 1000);
 
-        // Start progress bar
-        this.startProgress();
+        // Start progress bar update
+        this.progressInterval = setInterval(() => {
+            const progress = ((this.totalSeconds - (this.totalSeconds - (hours * 3600 +
+                minutes * 60 +
+                seconds))) / (hours * 3600 +
+                minutes * 60 +
+                seconds)) * 100;
+            this.progressBar.style.width = `${progress}%`;
+        }, 1000);
     }
 
     countdown() {
@@ -92,9 +99,8 @@ class SleepTimer {
         const minutes = Math.floor((this.totalSeconds % 3600) / 60);
         const seconds = this.totalSeconds % 60;
 
-        this.displayHours.textContent = hours.toString().padStart(2, '0');
-        this.displayMinutes.textContent = minutes.toString().padStart(2, '0');
-        this.displaySeconds.textContent = seconds.toString().padStart(2, 0);
+        this.timerText.textContent = 
+            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
 
     stopTimer() {
@@ -137,25 +143,17 @@ class SleepTimer {
     }
 
     handleTimerEnd() {
-        // Handle fade out if enabled
-        if (this.fadeOutCheckbox.checked) {
-            this.fadeOutSounds();
-        }
-
-        // Handle auto-stop if enabled
-        if (this.autoStopCheckbox.checked) {
-            this.stopAllSounds();
-        }
-
-        // Play alarm if enabled
-        if (this.alarmCheckbox.checked) {
-            this.playAlarm();
-        }
+        // Fade out sounds
+        this.fadeOutSounds();
+        
+        // Stop all sounds
+        this.stopAllSounds();
+        
+        // Play alarm
+        this.playAlarm();
 
         // Reset display
-        this.displayHours.textContent = '00';
-        this.displayMinutes.textContent = '00';
-        this.displaySeconds.textContent = '00';
+        this.timerText.textContent = '00:00:00';
         this.progressBar.style.width = '0%';
     }
 
