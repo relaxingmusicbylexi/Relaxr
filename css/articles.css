@@ -1,0 +1,90 @@
+/* Articles Page Styles */
+
+/* Search Bar */
+.search-container {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+#article-search {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f7fafc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#article-search:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+/* Articles Table */
+.articles-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.articles-table th {
+    background: #f7fafc;
+    padding: 1.25rem;
+    text-align: left;
+    font-weight: 600;
+    color: #4a5568;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.articles-table td {
+    padding: 1.25rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #4a5568;
+    vertical-align: middle;
+}
+
+.articles-table td:last-child {
+    color: #718096;
+    font-size: 0.95em;
+}
+
+.articles-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.articles-table tbody tr:hover {
+    background-color: #f7fafc;
+}
+
+.articles-table tbody tr td a {
+    color: #4299e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.articles-table tbody tr td a:hover {
+    color: #3182ce;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .articles-table {
+        font-size: 0.9rem;
+    }
+    
+    .articles-table th,
+    .articles-table td {
+        padding: 1rem;
+    }
+}

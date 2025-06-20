@@ -1,11 +1,27 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relaxing Music by Lexi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Relaxing music and sounds by Lexi. Find peace and tranquility with our calming soundscapes designed to help you relax, focus, and sleep better.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://relaxingmusicbylexi.github.io/Relaxr/">
+    <meta property="og:title" content="Relaxing Music by Lexi | Find Your Peace">
+    <meta property="og:description" content="Calming music and sounds designed to help you relax, focus, and find your inner peace.">
+    <meta property="og:image" content="https://relaxingmusicbylexi.github.io/Relaxr/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Relaxing Music by Lexi | Find Your Peace">
+    <meta name="twitter:description" content="Calming music and sounds designed to help you relax, focus, and find your inner peace.">
+    <meta name="twitter:image" content="https://relaxingmusicbylexi.github.io/Relaxr/images/og-image.jpg">
+
+    <title>Relaxing Music by Lexi | Find Your Peace</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/search.css">
@@ -19,50 +35,123 @@
         gtag('config', 'G-B85EJZZEFS');
     </script>
 </head>
-<!-- setup articles link -->
 
 <body>
-    <header>
-        <a href="index.html">Relaxing Music by Lexi</a>
-        <a href="relaxr.html">Relaxing Sound Mixer</a>
-        <a href="breathr.html">Guided Breathing</a>
-        <a href="mood-tracking.html">Mood Tracking</a>
-        <a href="sleep-timer.html">Sleep Timer</a>
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <i class="fas fa-moon"></i>
+                        <span>Relaxing Music</span>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="relaxr.html">Sound Mixer</a>
+                    <a href="breathr.html">Guided Breathing</a>
+                    <a href="mood-tracking.html">Mood Tracking</a>
+                    <a href="sleep-timer.html">Sleep Timer</a>
+                    <a href="articles.html">Articles</a>
+                </div>
+                <button class="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
     </header>
-    <h1>Welcome to my website! My name is Lexi.</h1>
-    <p>
-        And who am I? I’m just someone who finds peace in sound and wants to share that with you. In a world that’s always moving, I create music designed to slow things down—to help you breathe, relax, and just be.
 
-        I don’t chase trends or noise. I make music that feels like a deep exhale, a quiet moment, a warm light in the evening.
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Relaxing Music by Lexi</h1>
+                <p class="tagline">Find your moment of peace in a busy world</p>
+            </div>
+        </section>
 
-        If you’re here, it’s probably because you enjoy my music or maybe just need a little calm in your life.
+        <section class="intro container">
+            <div class="intro-content">
+                <h2>Hello, I'm Lexi</h2>
+                <div class="about-text">
+                    <p>I create music designed to slow things down—to help you breathe, relax, and just be. In a world that's always moving, I find peace in sound and want to share that with you.</p>
+                    <p>I don't chase trends or noise. I make music that feels like a deep exhale, a quiet moment, a warm light in the evening.</p>
+                    <p>If you're here, it's probably because you enjoy my music or maybe just need a little calm in your life.</p>
+                    <p class="highlight">You deserve a moment of peace. Press play and take it.</p>
+                </div>
+                <button class="bookmark-btn" onclick="bookmarkPage()">
+                    <i class="far fa-bookmark"></i> Bookmark This Page
+                </button>
+            </div>
+        </section>
 
-        Nice! So glad you found your way here.
+        <section class="social-section">
+            <div class="container">
+                <h2>Share the Calm</h2>
+                <p>Help others find their peace by sharing this page</p>
+                <div class="social-sharing">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://relaxingmusicbylexi.github.io/Relaxr/index.html" 
+                       target="_blank" 
+                       class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i> Share
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=https://relaxingmusicbylexi.github.io/Relaxr/index.html&text=Check%20out%20this%20awesome%20page!" 
+                       target="_blank" 
+                       class="social-btn twitter">
+                        <i class="fab fa-twitter"></i> Tweet
+                    </a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://relaxingmusicbylexi.github.io/Relaxr/index.html&title=Relaxing%20Music%20by%20Lexi&summary=Check%20out%20this%20awesome%20page!" 
+                       target="_blank" 
+                       class="social-btn linkedin">
+                        <i class="fab fa-linkedin-in"></i> Share
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        You deserve a moment of peace. Press play and take it.
-    </p>
-   
-    <span class="bookmark-icon" onclick="bookmarkPage()">&#9733; Bookmark This Page</span>
-
-    <!-- Social Sharing Buttons -->
-    <div class="social-sharing">
-        <h2>Share this with your friends.</h2>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://relaxingmusicbylexi.github.io/Relaxr/index.html" target="_blank">Share on Facebook</a>
-        <a href="https://twitter.com/intent/tweet?url=https://relaxingmusicbylexi.github.io/Relaxr/index.html&text=Check%20out%20this%20awesome%20page!" target="_blank">Share on Twitter</a>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://relaxingmusicbylexi.github.io/Relaxr/index.htmlL&title=Relaxing%20Sound%20Mixer&summary=Check%20out%20this%20awesome%20page!" target="_blank">Share on LinkedIn</a>
-    </div>
-    <footer>
-        <strong>Enjoying the calming sounds? Support Relaxing Music by Lexi with a donation to help keep the music flowing. Every contribution makes a difference! Thank you!</strong>
-        <br>
-        <br
-        <form action="https://www.paypal.com/donate" method="post" target="_top">
-            <input type="hidden" name="hosted_button_id" value="ALPY2AU2QTS9J" />
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-        </form>
-        <p>&copy; 2025 Relaxing Music By Lexi  & IndyCat Web Solutions. All rights reserved.</p>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="donation-banner">
+                <p class="support-text">
+                    <i class="fas fa-heart"></i>
+                    <strong>Enjoying the calming sounds?</strong> Support Relaxing Music by Lexi with a donation to help keep the music flowing.
+                </p>
+                <form action="https://www.paypal.com/donate" method="post" target="_top" class="donation-form">
+                    <input type="hidden" name="hosted_button_id" value="ALPY2AU2QTS9J" />
+                    <button type="submit" class="donate-btn">
+                        <i class="fab fa-paypal"></i> Donate with PayPal
+                    </button>
+                    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                </form>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2025</span> Relaxing Music By Lexi & IndyCat Web Solutions. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <script>
+        // Update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+        }
+    </script>
     <script src="js/scripts.js"></script>
     <script src="js/search.js"></script>
     <script src="js/dark-mode.js"></script>

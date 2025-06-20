@@ -1,41 +1,67 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Benefits of Breathing Exercises - Relaxr</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
     <header>
-        <a href="index.html">Home</a>
-        <a href="blog.html">Blog</a>
+        <a href="../index.html">Relaxing Music By Lexi</a>
+        <a href="../relaxr.html">Relaxing Sound Mixer</a>
+        <a href="../breathr.html">Guided Breathing</a>
+        <a href="../mood-tracking.html">Mood Tracking</a>
+        <a href="../sleep-timer.html">Sleep Timer</a>
+        <a href="../articles.html">Articles</a>
     </header>
 
-    <h1>The Benefits of Breathing Exercises</h1>
-    <article>
-        <h2>Introduction</h2>
-        <p>Breathing exercises are a simple and effective way to improve your overall health and well-being. By practicing controlled breathing techniques, you can reduce stress, increase energy levels, and enhance your mental clarity.</p>
+    <div class="article-container">
+        <h1>The Benefits of Breathing Exercises</h1>
+        <div class="article-meta">Posted on June 2025</div>
+        <article>
+            <h2>Introduction</h2>
+            <p>Breathing exercises are a simple and effective way to improve your overall health and well-being. By practicing controlled breathing techniques, you can reduce stress, increase energy levels, and enhance your mental clarity.</p>
 
-        <h2>Reduces Stress</h2>
-        <p>One of the most significant benefits of breathing exercises is their ability to reduce stress. When you focus on your breath, you activate the parasympathetic nervous system, which helps to calm your mind and body. This can lead to a decrease in cortisol levels, the hormone associated with stress.</p>
+            <h2>Reduces Stress</h2>
+            <p>One of the most significant benefits of breathing exercises is their ability to reduce stress. When you focus on your breath, you activate the parasympathetic nervous system, which helps to calm your mind and body. This can lead to a decrease in cortisol levels, the hormone associated with stress.</p>
 
-        <h2>Improves Mental Clarity</h2>
-        <p>Breathing exercises can also improve your mental clarity and focus. By increasing the oxygen flow to your brain, you can enhance cognitive function and concentration. This can be particularly beneficial during work or study sessions.</p>
+            <h2>Improves Mental Clarity</h2>
+            <p>Breathing exercises can also improve your mental clarity and focus. By increasing the oxygen flow to your brain, you can enhance cognitive function and concentration. This can be particularly beneficial during work or study sessions.</p>
 
-        <h2>Boosts Energy Levels</h2>
-        <p>Practicing breathing exercises can help to boost your energy levels. By increasing the oxygen supply to your cells, you can improve your overall vitality and reduce feelings of fatigue. This can be especially helpful during periods of low energy or when you need an extra boost.</p>
+            <h2>Boosts Energy Levels</h2>
+            <p>Practicing breathing exercises can help to boost your energy levels. By increasing the oxygen supply to your cells, you can improve your overall vitality and reduce feelings of fatigue. This can be especially helpful during periods of low energy or when you need an extra boost.</p>
 
-        <h2>Enhances Emotional Well-being</h2>
-        <p>Breathing exercises can also enhance your emotional well-being. By promoting relaxation and reducing stress, you can improve your mood and overall sense of happiness. This can lead to a more positive outlook on life and better emotional resilience.</p>
+            <h2>Enhances Emotional Well-being</h2>
+            <p>Breathing exercises can also enhance your emotional well-being. By promoting relaxation and reducing stress, you can improve your mood and overall sense of happiness. This can lead to a more positive outlook on life and better emotional resilience.</p>
 
-        <h2>Conclusion</h2>
-        <p>Incorporating breathing exercises into your daily routine can have numerous benefits for your physical, mental, and emotional health. Whether you are looking to reduce stress, improve mental clarity, boost energy levels, or enhance your emotional well-being, controlled breathing techniques can be a valuable tool in achieving your wellness goals.</p>
-    </article>
+            <h2>Conclusion</h2>
+            <p>Incorporating breathing exercises into your daily routine can have numerous benefits for your physical, mental, and emotional health. Whether you are looking to reduce stress, improve mental clarity, boost energy levels, or enhance your emotional well-being, controlled breathing techniques can be a valuable tool in achieving your wellness goals.</p>
+        </article>
+    </div>
 
     <footer>
         <p>&copy; 2025 Relaxing Music By Lexi. All rights reserved.</p>
     </footer>
+    <script>
+        // Load dark mode script after the page has loaded
+        window.addEventListener('DOMContentLoaded', function() {
+            var script = document.createElement('script');
+            script.src = '../js/dark-mode.js';
+            script.onload = function() {
+                // Ensure header stays visible after dark mode loads
+                document.querySelector('header').style.display = 'flex';
+                Array.from(document.querySelectorAll('header a')).forEach(function(link) {
+                    link.style.display = 'inline-block';
+                    link.style.visibility = 'visible';
+                    link.style.opacity = '1';
+                });
+            };
+            document.body.appendChild(script);
+        });
+    </script>
 </body>
 </html>
