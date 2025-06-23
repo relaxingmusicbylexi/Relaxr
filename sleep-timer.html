@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sleep Timer - Relaxing Music By Lexi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <title>Sleep Timer - Relaxing Music by Lexi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/search.css">
@@ -20,15 +21,31 @@
     </script>
 </head>
 <body>
-    <header>
-        <a href="index.html"> Relaxing Music By Lexi</a>
-        <a href="relaxr.html">Relaxing Sound Mixer</a>
-        <a href="breathr.html">Guided Breathing</a>
-        <a href="mood-tracking.html">Mood Tracking</a>
-        <a href="sleep-timer.html" class="active">Sleep Timer</a>
-        <a href="articles.html">Articles</a>
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <i class="fas fa-moon"></i>
+                        <span>Relaxing Music</span>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="relaxr.html">Sound Mixer</a>
+                    <a href="breathr.html">Guided Breathing</a>
+                    <a href="mood-tracking.html">Mood Tracking</a>
+                    <a href="sleep-timer.html" class="active">Sleep Timer</a>
+                    <a href="articles.html">Articles</a>
+                </div>
+            </nav>
+        </div>
     </header>
-    <h1>Sleep Timer</h1>
+    
+    <main class="container">
+    <section class="hero">
+        <h1>Sleep Timer</h1>
+    </section>
     <div class="sleep-timer-section">
         <div class="timer-controls">
             <div class="time-inputs">
@@ -49,18 +66,27 @@
             </div>
         </div>
     </div>
-    <footer>
-        <strong>Enjoying the calming sounds? Support Relaxing Music by Lexi with a donation to help keep the music flowing. Every contribution makes a difference! Thank you!</strong>
-        <br>
-        <br>
-        <form action="https://www.paypal.com/donate" method="post" target="_top">
-            <input type="hidden" name="hosted_button_id" value="ALPY2AU2QTS9J" />
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-        </form>
-        <p>&copy; 2025 Relaxing Music By Lexi & IndyCat Web Solutions. All rights reserved.</p>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="donation-banner">
+                <p class="support-text">
+                    <i class="fas fa-heart"></i>
+                    <strong>Enjoying the sleep timer?</strong> Support Relaxing Music by Lexi with a donation to help keep the content flowing.
+                </p>
+                <form action="https://www.paypal.com/donate" method="post" target="_top" class="donation-form">
+                    <input type="hidden" name="hosted_button_id" value="ALPY2AU2QTS9J" />
+                    <button type="submit" class="donate-btn">
+                        <i class="fab fa-paypal"></i> Donate with PayPal
+                    </button>
+                </form>
+            </div>
+        </div>
     </footer>
 
+    <script>
+        // Update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear() + ' Relaxing Music By Lexi & IndyCat Web Solutions. All rights reserved.';
+    </script>
     <script src="js/scripts.js"></script>
     <script src="js/search.js"></script>
     <script src="js/dark-mode.js"></script>

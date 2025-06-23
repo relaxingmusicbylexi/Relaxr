@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articles - Relaxr</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <title>Articles - Relaxing Music by Lexi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/articles.css">
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -19,13 +21,31 @@
     </script>
 </head>
 <body>
-    <header>
-        <a href="index.html">Relaxing Music By Lexi</a>
-        <a href="relaxr.html">Relaxing Sound Mixer</a>
-        <a href="breathr.html">Guided Breathing</a>
-        <a href="mood-tracking.html">Mood Tracking</a>
-        <a href="articles.html">Articles</a>
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <i class="fas fa-moon"></i>
+                        <span>Relaxing Music</span>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="relaxr.html">Sound Mixer</a>
+                    <a href="breathr.html">Guided Breathing</a>
+                    <a href="mood-tracking.html">Mood Tracking</a>
+                    <a href="sleep-timer.html">Sleep Timer</a>
+                    <a href="articles.html" class="active">Articles</a>
+                </div>
+            </nav>
+        </div>
     </header>
+    
+    <main class="container">
+    <section class="hero">
+        <h1>Articles</h1>
+    </section>
     
     <script src="js/articles.js"></script>
     <script src="js/dark-mode.js"></script>
@@ -53,7 +73,7 @@
         });
     </script>
 
-    <h1>Articles</h1>
+    
     <div class="search-container">
         <input type="text" id="article-search" placeholder="Search articles...">
     </div>
@@ -76,9 +96,31 @@
         </tbody>
     </table>
 
-    <footer>
-        <!-- <a href="https://buy.stripe.com/test_4gw4jQd2g0gG1gk4gh" class="btn">Donations Tip Jar</a> -->
-        <p>&copy; 2025 Relaxing Music By Lexi. All rights reserved.</p>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="donation-banner">
+                <p class="support-text">
+                    <i class="fas fa-heart"></i>
+                    <strong>Enjoying the content?</strong> Support Relaxing Music by Lexi with a donation to help keep the music flowing.
+                </p>
+                <form action="https://www.paypal.com/donate" method="post" target="_top" class="donation-form">
+                    <input type="hidden" name="hosted_button_id" value="ALPY2AU2QTS9J" />
+                    <button type="submit" class="donate-btn">
+                        <i class="fab fa-paypal"></i> Donate with PayPal
+                    </button>
+                    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                </form>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/articles.js"></script>
+    <script src="js/dark-mode.js"></script>
 </body>
 </html>
